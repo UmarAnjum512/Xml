@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<personData>
+<user id="1" xmlns:rayan1="htpp://rayan1.com/mynamespace">
+<rayan1:fname>rayyan</rayan1:fname>
+<rayan1:lname>alvi</rayan1:lname>
+<rayan1:email>rayyanalvi1234@gmail.com</rayan1:email>
+</user>
+
+<user id="2" xmlns:umar2="htpp://umar2.com/mynamespace">
+<umar2:fname>Umar</umar2:fname>
+<umar2:lname>Anjum</umar2:lname>
+<umar2:email>umaranjum5120@gmail.com</umar2:email>
+</user>
+
+<!-- <user id="3">
+<fname>hasssan</fname>
+<lname>ahmad</lname>
+<email>hassanahmad1234@gmail.com</email>
+</user> -->
+</personData>
