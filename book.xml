@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Books xmlns:xsi ="http://www.w3.org/2001/XMLSchhema-instnance" xsi:noNamespaceSchemaLocation ="book.xsd">
+    <Book>
+        <Book-id>12</Book-id>
+        <Author>Umar Anjum</Author>
+        <Title>Xml By Example</Title>
+    </Book>
+    <Book>
+        <Book-id>12</Book-id>
+        <Author gender ="Male" id="">Umar Anjum</Author>
+        <Title>Xml By Example</Title>
+    </Book>
+    <Book>
+        <Book-id>12</Book-id>
+        <Author>Umar Anjum</Author>
+        <Title>Xml By Example</Title>
+    </Book>
+    <Book>
+        <Book-id>805</Book-id>
+        <Author>hasssan ahmad</Author>
+        <Title>Xml By Example</Title>
+    </Book>
+</Books>
