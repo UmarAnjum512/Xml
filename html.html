@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         // let name="";
@@ -15,30 +17,30 @@
         // console.log(flower);
         // document.write(flower.color + " "+ flower.name);
 
-        let flower={"name":"Sunflower","color":"yellow","type":"A"};
+        let flower = { "name": "Sunflower", "color": "yellow", "type": "A" };
         document.write(flower["name"] + "<br>");
-        document.write(flower["color"] +"<br>");
+        document.write(flower["color"] + "<br>");
         document.write(flower["type"] + "<br>");
 
         // changing with json
         document.write("<br><h2>Change value</h2>")
-        flower.name="Rose";
-        flower.color="red";
-        flower.type="B";
-        
+        flower.name = "Rose";
+        flower.color = "red";
+        flower.type = "B";
+
         document.write(flower["name"] + "<br>");
         document.write(flower["color"] + "<br>");
         document.write(flower["type"] + "<br>");
         document.write("<br><br>");
-        
 
-        let data={
-            "name":"Umar",
-            "enrol":1593899,
-            "class":"12",
-            "age":"21",
-            "subject":["Math","urdu","english"],
-            "CR":{"name":"rameez","class":"b.com"}
+
+        let data = {
+            "name": "Umar",
+            "enrol": 1593899,
+            "class": "12",
+            "age": "21",
+            "subject": ["Math", "urdu", "english"],
+            "CR": { "name": "rameez", "class": "b.com" }
         };
 
         // document.write(data.name +"<br>");
@@ -51,23 +53,90 @@
 
         // 8-2-2025
 
-        let studentData ={
-            "name":"Umar",
-            "enrol":1593899,
-            "class":"12",
-            "age":"21",
-            "subject":["Math","urdu","english"],
-            "CR":{"name":"rameez","class":"b.com"}
-        };
-        document.write(studentData.name +"<br>");
-        document.write(studentData.enrol +"<br>");
-        document.write(studentData.class +"<br>");
-        document.write(studentData.age +"<br>");
-        document.write(studentData.subject[0] +"<br>");
-        document.write(studentData.CR["name"] +"<br>");
+        // let studentData ={
+        //     "name":"Umar",
+        //     "enrol":1593899,
+        //     "class":"12",
+        //     "age":"21",
+        //     "subject":["Math","urdu","english"],
+        //     "CR":{"name":"rameez","class":"b.com"}
+        // };
+        // document.write(studentData.name +"<br>");
+        // document.write(studentData.enrol +"<br>");
+        // document.write(studentData.class +"<br>");
+        // document.write(studentData.age +"<br>");
+        // document.write(studentData.subject[0] +"<br>");
+        // document.write(studentData.CR["name"] +"<br>");
+
+
+        // for (let number = 21; number <= 30; number++) {
+        //     console.log(`${2 * number}`);
+
+        // };
+
+        // let num1=parseInt(prompt("enter your number"));
+        // let i=1;
+        // do{
+        //    document.write(num1 + ' * ' +  i  + ' = ' + num1*i + "<br>");
+        //    i++;
+        // }
+        // while(i<=10);
+
+        // 11-2-2025
+
+        // javascript type
+
+        // string
+        let name ="Umar";
+        let last ="Anjum"
+
+        // number
+        let number = 11;
+        let number1 = 22;
+
+        // boleans
+        let x=true;
+        let y=false;
+
+        // function myfun(){
+        //     console.log("hello word");
+        // }
+        // myfun();
+
+        // function myfun2(){
+        //     return "hello umar"
+        // }
+        // console.log(myfun2())
+
+        // setTimeout(() =>{
+        //     console.log("hello this word")
+        // },5000);
+
+
+        function myfun3(name){
+            return name
+        }
+        console.log(myfun3("hassan alvi"));
+
+        function myfun4(name){
+            return `hello ${name}`
+        }
+        console.log(myfun4("umar"));
+        console.log(myfun4("anjum"));
+        console.log(myfun4("hassan"));
+
+
+
+
+
+
+
+
+
 
 
 
     </script>
 </body>
+
 </html>
