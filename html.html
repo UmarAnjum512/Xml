@@ -6,9 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
+<style>
+    
+</style>
 <body>
+
+    <h2>Local Storage form</h2>
+    
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="Enter your name">
+    <br>
+    <label for="age">Age</label>
+    <input type="number" id="age" placeholder="Enter your age">
+    <br>
+    <br>
+
+    <button onclick="createRecord()">submit data</button>
+    <button onclick="readRecord()">Read Record</button> 
+
+    <h3>Result</h3>
+    <p id="result">click a button to see the result.</p>
+
+
     <script>
+        function createRecord(){
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+
+            if (name && age){
+                let person ={name,age}
+                localStorage.setItem("person", JSON.stringify(person));
+                document.getElementById("result").innerText ="Submited Data"
+                clearInput();
+            }
+            else{
+                document.getElementById("result").innerText ="Please Enter your Data"
+            }
+        }
+
+        function clearInput(){
+            document.getElementById("name").value="";
+            document.getElementById("age").value="";
+
+        }
+
+        function readRecord(){
+            let person=localStorage.getItem("person");
+            if(person){
+                let parsedperson= JSON.parse(person);
+                
+                document.getElementById("name").value=parsedperson.name;
+                document.getElementById("age").value=parsedperson.age;
+                document.getElementById("result").innerText=`Name: ${parsedperson.name} , Age: ${parsedperson.age}`;
+            }
+            else{
+                document.getElementById("result").innerText ="No Record"
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // let name="";
         // const name2="hassan alvi";
         // console.log(name2,"+",name);
@@ -17,31 +95,31 @@
         // console.log(flower);
         // document.write(flower.color + " "+ flower.name);
 
-        let flower = { "name": "Sunflower", "color": "yellow", "type": "A" };
-        document.write(flower["name"] + "<br>");
-        document.write(flower["color"] + "<br>");
-        document.write(flower["type"] + "<br>");
+        // let flower = { "name": "Sunflower", "color": "yellow", "type": "A" };
+        // document.write(flower["name"] + "<br>");
+        // document.write(flower["color"] + "<br>");
+        // document.write(flower["type"] + "<br>");
 
-        // changing with json
-        document.write("<br><h2>Change value</h2>")
-        flower.name = "Rose";
-        flower.color = "red";
-        flower.type = "B";
+        // // changing with json
+        // document.write("<br><h2>Change value</h2>")
+        // flower.name = "Rose";
+        // flower.color = "red";
+        // flower.type = "B";
 
-        document.write(flower["name"] + "<br>");
-        document.write(flower["color"] + "<br>");
-        document.write(flower["type"] + "<br>");
-        document.write("<br><br>");
+        // document.write(flower["name"] + "<br>");
+        // document.write(flower["color"] + "<br>");
+        // document.write(flower["type"] + "<br>");
+        // document.write("<br><br>");
 
 
-        let data = {
-            "name": "Umar",
-            "enrol": 1593899,
-            "class": "12",
-            "age": "21",
-            "subject": ["Math", "urdu", "english"],
-            "CR": { "name": "rameez", "class": "b.com" }
-        };
+        // let data = {
+        //     "name": "Umar",
+        //     "enrol": 1593899,
+        //     "class": "12",
+        //     "age": "21",
+        //     "subject": ["Math", "urdu", "english"],
+        //     "CR": { "name": "rameez", "class": "b.com" }
+        // };
 
         // document.write(data.name +"<br>");
         // document.write(data.enrol +"<br>");
@@ -87,16 +165,16 @@
         // javascript type
 
         // string
-        let name ="Umar";
-        let last ="Anjum"
+        // let name ="Umar";
+        // let last ="Anjum"
 
-        // number
-        let number = 11;
-        let number1 = 22;
+        // // number
+        // let number = 11;
+        // let number1 = 22;
 
-        // boleans
-        let x=true;
-        let y=false;
+        // // boleans
+        // let x=true;
+        // let y=false;
 
         // function myfun(){
         //     console.log("hello word");
@@ -186,19 +264,19 @@
         // }
 
 
-        let num=[10,20,30];
-        // destructuring assignment
-        let [a,b,c]=num;
-        console.log(a);
-        console.log(b);
-        console.log(c);
+        // let num=[10,20,30];
+        // // destructuring assignment
+        // let [a,b,c]=num;
+        // console.log(a);
+        // console.log(b);
+        // console.log(c);
 
 
-        let product =["product1","product2","product3"];
-        let [d,e,f]=product;
-        console.log(d);
-        console.log(e);
-        console.log(f);
+        // let product =["product1","product2","product3"];
+        // let [d,e,f]=product;
+        // console.log(d);
+        // console.log(e);
+        // console.log(f);
 
 
 
@@ -213,19 +291,6 @@
         // let product1 ={fname:"umar",age:"21"};
         // let { fname }=product1;
         // console.log(name);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     </script>
