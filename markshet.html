@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body { font-family: Arial, sans-serif; text-align: center; }
+    table { width: 50%; margin: auto; border-collapse: collapse; }
+    th, td { border: 1px solid black; padding: 10px; }
+    .container { margin-top: 20px; }
+</style>
+<body>
+    <h2>Student Marksheet</h2>
+    <div class="container">
+        <label>Student Name:<input type="text" id="studentname"></label><br><br>
+        <label>Math:<input type="number" id="math"></label><br><br>
+        <label>English:<input type="number" id="english"></label><br><br>
+        <label>Biology:<input type="number" id="Biology"></label><br><br>
+        <button onclick="saveData()" >Save Marksheet</button>
+        <button>Show Marksheet</button>
+        <button>Clear Marksheet</button>
+    </div>
+
+
+    <script>
+        function saveData(){
+            let name = document.getElementById("studentname").value;
+            let math = document.getElementById("math").value;
+            let english = document.getElementById("english").value;
+            let biology = document.getElementById("Biology").value;
+
+            if(!name || !math || !english || !biology){
+                alert("Please fill all fields ")
+                return;
+            }
+            let studentdata ={name,math,english,biology};
+            sessionStorage.setItem("Marksheet",JSON.stringify(studentdata));
+            alert("Save Your Marksheet")
+            clearData();            
+        }
+        function clearData(){
+            let name = document.getElementById("studentname").value ="";
+            let math = document.getElementById("math").value ="";
+            let english = document.getElementById("english").value ="";
+            let biology = document.getElementById("Biology").value ="";
+
+        }
+    </script>
+</body>
+</html>

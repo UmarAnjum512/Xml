@@ -7,62 +7,103 @@
     <title>Document</title>
 </head>
 <style>
-    
+
 </style>
+
 <body>
 
-    <h2>Local Storage form</h2>
-    
-    <label for="name">Name</label>
-    <input type="text" id="name" placeholder="Enter your name">
-    <br>
-    <label for="age">Age</label>
-    <input type="number" id="age" placeholder="Enter your age">
-    <br>
-    <br>
+    <div class="create-form">
+        <h2>Local Storage form</h2>
 
-    <button onclick="createRecord()">submit data</button>
-    <button onclick="readRecord()">Read Record</button> 
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <br>
+        <label for="age">Age</label>
+        <input type="number" id="age" placeholder="Enter your age">
+        <br>
+        <br>
 
-    <h3>Result</h3>
-    <p id="result">click a button to see the result.</p>
+        <button onclick="createRecord()">submit data</button>
+        <button onclick="readRecord()">Read Record</button>
+        <button onclick="updateRecord()">Update Record</button>
+        <button onclick="deletRecord()">Delete Record</button>
+
+        <h3>Result</h3>
+        <p id="result">click a button to see the result.</p>
+
+    </div>
 
 
     <script>
-        function createRecord(){
+
+        // createRecord
+
+        function createRecord() {
             let name = document.getElementById("name").value;
             let age = document.getElementById("age").value;
 
-            if (name && age){
-                let person ={name,age}
+            if (name && age) {
+                let person = { name, age }
                 localStorage.setItem("person", JSON.stringify(person));
-                document.getElementById("result").innerText ="Submited Data"
+                document.getElementById("result").innerText = "Submited Data"
                 clearInput();
             }
-            else{
-                document.getElementById("result").innerText ="Please Enter your Data"
+            else {
+                document.getElementById("result").innerText = "Please Enter your Data"
             }
         }
 
-        function clearInput(){
-            document.getElementById("name").value="";
-            document.getElementById("age").value="";
+        // readRecord
+        function readRecord() {
+            let person = localStorage.getItem("person");
+            if (person) {
+                let parsedperson = JSON.parse(person);
 
+                document.getElementById("name").value = parsedperson.name;
+                document.getElementById("age").value = parsedperson.age;
+                document.getElementById("result").innerText = `Name: ${parsedperson.name} , Age: ${parsedperson.age}`;
+            }
+            else {
+                document.getElementById("result").innerText = "No Record"
+            }
         }
 
-        function readRecord(){
-            let person=localStorage.getItem("person");
+        // updateRecord
+        function updateRecord(){
+            let person =localStorage.getItem("person");
             if(person){
-                let parsedperson= JSON.parse(person);
-                
-                document.getElementById("name").value=parsedperson.name;
-                document.getElementById("age").value=parsedperson.age;
-                document.getElementById("result").innerText=`Name: ${parsedperson.name} , Age: ${parsedperson.age}`;
+                let name = document.getElementById("name").value;
+                let age = document.getElementById("age").value;
+
+                if(name && age){
+                    let updatedata = {name , age};
+                    localStorage.setItem("person", JSON.stringify(updatedata));
+                    document.getElementById("result").innerText = "Record Update"
+                    clearInput();
+                }
+                else{
+                    document.getElementById("result").innerText = "Please Enter your Data"
+                }
             }
             else{
-                document.getElementById("result").innerText ="No Record"
+                document.getElementById("result").innerText = "No Record found to update"
             }
         }
+
+        // deletRecord
+        function deletRecord(){
+            localStorage.removeItem("person");
+            document.getElementById("result").innerText = "Record Deleted"
+            clearInput();
+        }
+
+        // clearInput
+        function clearInput() {
+            document.getElementById("name").value = "";
+            document.getElementById("age").value = "";
+
+        }
+
 
 
 
