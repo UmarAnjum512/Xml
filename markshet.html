@@ -19,9 +19,10 @@
         <label>English:<input type="number" id="english"></label><br><br>
         <label>Biology:<input type="number" id="Biology"></label><br><br>
         <button onclick="saveData()" >Save Marksheet</button>
-        <button>Show Marksheet</button>
-        <button>Clear Marksheet</button>
+        <button onclick="showData()" >Show Marksheet</button>
+        <button onclick="del()">Clear Marksheet</button>
     </div>
+    <div id="marksheet"></div>
 
 
     <script>
@@ -40,6 +41,43 @@
             alert("Save Your Marksheet")
             clearData();            
         }
+
+        function showData(){
+            let data = sessionStorage.getItem("Marksheet");
+            if(!data){
+                document.getElementById("marksheet").innerHTML="<p>No Marksheet found</p>"
+                return;
+            }
+
+            let {name,math,english,biology}=JSON.parse(data);
+            let total = Number(math) + Number(english) + Number(biology);
+            let persantage = (total/ 300*100).toFixed(2);
+
+            document.getElementById("marksheet").innerHTML=`
+            <h2>MarkSheet</h2>
+            <table>
+            <tr><th>Name</th><td>${name}</td></tr>
+            <tr><th>Math</th><td>${math}</td></tr>
+            <tr><th>English</th><td>${english}</td></tr>
+            <tr><th>Biology</th><td>${biology}</td></tr>
+            <tr><th>Total</th><td>${total}</td></tr>
+            <tr><th>Persntage</th><td>${persantage}</td></tr>
+            </table>`
+        }
+        function del(){
+            sessionStorage.removeItem("Marksheet");
+            document.getElementById("marksheet").innerHTML=""
+            document.getElementById("studentname").value="";
+            document.getElementById("math").value="";
+            document.getElementById("english").value="";
+            document.getElementById("Biology").value="";
+
+            alert("Marksheet deletd")
+    
+        }
+
+
+
         function clearData(){
             let name = document.getElementById("studentname").value ="";
             let math = document.getElementById("math").value ="";
@@ -47,6 +85,15 @@
             let biology = document.getElementById("Biology").value ="";
 
         }
+
+
+
+
+
+
+        let num = [1,2,3,4,5];
+        let set =num.map(num => num*2);
+        console.log(set);
     </script>
 </body>
 </html>
