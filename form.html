@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     body { font-family: Arial, sans-serif; text-align: center; }
+    table { width: 50%; margin: auto; border-collapse: collapse; }
+    th, td { border: 1px solid #000000; padding: 10px; }
+    .container { margin-top: 20px; }
+</style>
+</style>
+<body>
+    
+    <label>Enter First :<input type="number" id="num1"></label><br><br>
+    <label>Enter Second :<input type="number" id="num2"></label><br><br>
+    <label>Enter Third :<input type="number" id="num3"></label><br><br>
+    <button onclick="addYears()">Add Years</button>
+
+
+
+
+    <script>       
+        function addYears(){
+            let num1=document.getElementById("num1").value;
+            let num2=document.getElementById("num2").value;
+            let num3=document.getElementById("num3").value;
+            let total = Number(num1) + Number(num2) + Number(num3);
+
+            document.write(total);
+            
+
+
+        }
+    </script>
+</body>
+</html>

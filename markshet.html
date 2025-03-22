@@ -24,8 +24,13 @@
     </div>
     <div id="marksheet"></div>
 
-    <p id="text">new text</p>
+    <p>new text</p>
+    <p>new text</p>
+    <p>new text</p>
     <button onclick="addText()">add text</button>
+    <p class="new">new text</p>
+    <p class="new">new text</p>
+    <button onclick="textChange()">add text</button>
 
     <script>
         function saveData(){
@@ -127,8 +132,43 @@
 
 
         function addText(){
-            document.getElementById("text").innerText ="add text"
+            let text=document.getElementsByTagName("p");
+            text[1].textContent="Good morning!"
+        };
+        function textChange(){
+            let text2=document.getElementsByClassName("new")[1];
+            text2.textContent="Good morning!"
+        };
+
+
+
+        let studentData ={
+            name:"Umar",
+            enrol:1593899,
+            class:12,
+            age:21,
+            subject:"Math",
+            Class:"b.com"
+        };
+        for (let key in studentData){
+            console.log(studentData[key]);
+
         }
+
+
+        function newFun(){
+            let count=0;
+            return function(){
+                count++;
+                console.log(count);
+            }
+        }
+        let counter = newFun();
+        counter();
+        counter()
+        counter()
+        counter()
+
 
 
 

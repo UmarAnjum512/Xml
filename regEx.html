@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     body { font-family: Arial, sans-serif; text-align: center; }
+    table { width: 50%; margin: auto; border-collapse: collapse; }
+    th, td { border: 1px solid black; padding: 10px; }
+    .container { margin-top: 20px; }
+</style>
+<body>
+    <h2>Contact Form</h2>
+    <input type="mail" id="mail" placeholder="Enter your email"><br>
+    <input type="text" id="password" placeholder="Password"><br>
+    <button onclick="check()">Check Password</button>
+
+    <p id="message"></p>
+
+
+
+
+
+
+
+    <script>
+        function check(){
+
+            let mail=document.getElementById("mail").value;
+            let password=document.getElementById("password").value;
+            let message=document.getElementById("message");
+            let passwordRegex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,16}$/;
+            let mailRegex=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            if(mailRegex.test(mail)){
+                message.innerHTML="password is valided";
+                message.style.color="yellow";
+
+            }
+            else if(passwordRegex.test(password)) {
+                message.innerHTML="password is valid";
+                message.style.color="green";
+            }
+            else{
+                message.innerHTML="password must be at last 8 characters long, include an uppercase letter, lowercase letter, a number, and a special character"
+                message.style.color="red";
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // const regex=/verry/g
+        // const text="This is Ali. he is verry good student"
+        // console.log(text.replace(regex,"VERRY"))
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="api"></p>
+    <script>
+        
+        // tusday 4-3-2025
+
+        // async function fatchdata(){
+        //     return "hello word";
+        // }
+        // fatchdata().then(console.log)
+
+
+
+        // async function fatchData(){
+        //     let promise = new Promise((resolve) => {
+        //         setTimeout(()=>resolve("Data Recived"),2000)
+        //     });
+        //     let result =await promise;
+        //     console.log(result)
+        // }
+        // fatchData()
+
+
+
+        async function ApiData(){
+            try{
+                let promise = await fetch("https://jsonplaceholder.typicode.com/users/1");
+                let user = await promise.json();
+                console.log(user);
+
+
+                document.getElementById("api").innerHTML=user.name+"<br>"+user.email+"<br>"+user.website
+            }
+            catch (error){
+                console.log("Error fetching user",error)
+            }
+        }
+        ApiData()
+
+
+
+    </script>
+</body>
+</html>
